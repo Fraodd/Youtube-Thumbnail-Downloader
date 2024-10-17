@@ -1,0 +1,111 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(135deg, #1f1f1f, #0f0f0f, #1a1a1a);
+    background-size: 400% 400%; /* For smoother animation */
+    animation: gradientAnimation 15s ease infinite; /* Animation for background */
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Prevents scrollbars from appearing */
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%; /* Start position */
+    }
+    25% {
+        background-position: 50% 0%; /* Move to the right */
+    }
+    50% {
+        background-position: 100% 50%; /* Move to the left */
+    }
+    75% {
+        background-position: 50% 100%; /* Move down */
+    }
+    100% {
+        background-position: 0% 50%; /* Return to start */
+    }
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.9); /* Increased shadow for depth */
+    background-color: rgba(30, 30, 30, 0.95); /* Slightly transparent dark background for the container */
+    width: 90%;
+    max-width: 400px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.9); /* Increased shadow on hover */
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+input[type="text"] {
+    padding: 15px;
+    margin: 20px 0;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    background-color: #2e2e2e;
+    color: #ffffff;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+input[type="text"]:focus {
+    background-color: #3e3e3e;
+    outline: none;
+    transform: scale(1.02);
+}
+
+button {
+    padding: 15px 25px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff4757;
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #e84118;
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+#thumbnailContainer {
+    margin-top: 20px;
+}
+
+.thumbnail {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-top: 15px;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.5s ease; /* Fade-in transition */
+}
+
+.thumbnail.visible {
+    opacity: 1; /* Fully visible */
+}
